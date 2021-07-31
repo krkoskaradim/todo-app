@@ -11,7 +11,7 @@ export const TodoList = (): JSX.Element => {
             <Row gutter={16}>
                 {
                     data?.map((todoData) => (
-                        <Col span={8}>
+                        <Col span={8} key={todoData.id}>
                             <TodoItem todoData={todoData} />
                         </Col>
                     ))
