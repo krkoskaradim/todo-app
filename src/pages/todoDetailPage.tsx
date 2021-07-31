@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
-import { SimplePageStyled } from '../components/styled/simple-page-styled';
+import { SimplePageStyled } from '../components/styled/simplePageStyled';
 import useDocumentTitle from '../actions/useDocumentTitle';
 import { TodoDetail } from '../components/todo/todoDetail';
 import * as config from '../config/default';
