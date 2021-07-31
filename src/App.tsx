@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-    Route, BrowserRouter as Router, Switch, Link,
+    Route, BrowserRouter as Router, Switch,
 } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import { Button, Result } from 'antd';
+import { Result } from 'antd';
 import { TodoListPage } from './pages/todoListPage';
 import { TodoDetailPage } from './pages/todoDetailPage';
 import { TodoDataProvider } from './contexts/todoDataContext';

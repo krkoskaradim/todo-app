@@ -1,5 +1,5 @@
 import React from 'react';
-import { Empty, Result, Spin } from 'antd';
+import { Result, Spin } from 'antd';
 import { useTodoData } from '../../contexts/todoDataContext';
 import { TodoItem } from './todoItem';
 

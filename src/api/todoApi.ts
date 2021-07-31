@@ -1,6 +1,4 @@
-// should be exported from BE
-
-export interface TodoData {
+export interface TodoData { // should be exported from BE
     id: string,
     title: string
 }
