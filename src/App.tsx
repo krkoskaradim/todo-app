@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
     body, html {
         width: 100%;
         min-width: 100%;
-        text-align: center;
     }
 `;
 

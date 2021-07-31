@@ -8,11 +8,18 @@ export const TodoList = (): JSX.Element => {
 
     return (
         <Spin size="large" spinning={isLoading}>
-            <Row gutter={16}>
+            <Row gutter={[16, 16]}>
                 {
                     data?.map((todoData) => (
                         <Col span={8} key={todoData.id}>
-                            <TodoItem todoData={todoData} />
+                            <TodoItem
+                                todoData={todoData}
+                                ellipsis={{
+                                    rows: 2,
+                                    expandable: false,
+                                    symbol: '...',
+                                }}
+                            />
                         </Col>
                     ))
                 }
