@@ -1,23 +1,27 @@
 import React from 'react';
 import {
-    Route, BrowserRouter as Router, Switch,
+    Route, BrowserRouter as Router, Switch, Link,
 } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import { Button, Result } from 'antd';
 import { TodoListPage } from './pages/todoListPage';
 import { TodoDetailPage } from './pages/todoDetailPage';
 import { TodoDataProvider } from './contexts/todoDataContext';
 import * as config from './config/default';
+import { TitleStyled } from './components/styled/typographyStyled';
 
 const GlobalStyle = createGlobalStyle`
     body, html {
         width: 100%;
         min-width: 100%;
+        text-align: center;
     }
 `;
 
 const App = (): JSX.Element => (
     <>
         <GlobalStyle />
+        <TitleStyled>Todo App</TitleStyled>
         <Router>
             <Switch>
                 <TodoDataProvider>
@@ -28,6 +32,10 @@ const App = (): JSX.Element => (
                 </TodoDataProvider>
             </Switch>
         </Router>
+        <Result
+            status="404"
+            title="Sorry, the page you visited does not exist"
+        />
     </>
 );
 
