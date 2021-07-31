@@ -12,8 +12,8 @@ export interface TodoDetailPageParams {
 }
 
 export const TodoDetailPage = (): JSX.Element => {
-    useDocumentTitle('Detail');
     const { id } = useParams<TodoDetailPageParams>();
+    useDocumentTitle(`Detail ${id}`);
 
     return (
         <SimplePageStyled>

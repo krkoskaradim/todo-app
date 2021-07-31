@@ -1,5 +1,5 @@
 import React from 'react';
-import { Empty, Spin } from 'antd';
+import { Empty, Result, Spin } from 'antd';
 import { useTodoData } from '../../contexts/todoDataContext';
 import { TodoItem } from './todoItem';
 
@@ -17,10 +17,15 @@ export const TodoDetail = (props: TodoDetailProps): JSX.Element => {
     }
 
     if (!todoData) {
-        return <Empty />;
+        return (
+            <Result
+                status="404"
+                title="Sorry, that todo item does not exists"
+            />
+        );
     }
 
     return (
-        <TodoItem todoData={todoData} />
+        <TodoItem hideActions todoData={todoData} />
     );
 };
