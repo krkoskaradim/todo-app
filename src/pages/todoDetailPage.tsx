@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Button, Col, Row } from 'antd';
+import { Button } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import { SimplePageStyled } from '../components/styled/simplePageStyled';
