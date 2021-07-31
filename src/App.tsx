@@ -4,6 +4,9 @@ import {
 } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { TodoListPage } from './pages/todoListPage';
+import { TodoDetailPage } from './pages/todoDetailPage';
+import { TodoDataProvider } from './contexts/todoDataContext';
+import * as config from './config/default';
 
 const GlobalStyle = createGlobalStyle`
     body, html {
@@ -17,7 +20,12 @@ const App = (): JSX.Element => (
         <GlobalStyle />
         <Router>
             <Switch>
-                <Route path="/" component={TodoListPage} />
+                <TodoDataProvider>
+                    <>
+                        <Route exact path={config.routes.todoList} component={TodoListPage} />
+                        <Route exact path={config.routes.todoDetail} component={TodoDetailPage} />
+                    </>
+                </TodoDataProvider>
             </Switch>
         </Router>
     </>

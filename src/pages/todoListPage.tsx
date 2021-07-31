@@ -8,10 +8,8 @@ export const TodoListPage = (): JSX.Element => {
     useDocumentTitle('List');
 
     return (
-        <TodoDataProvider>
-            <SimplePageStyled>
-                <TodoList />
-            </SimplePageStyled>
-        </TodoDataProvider>
+        <SimplePageStyled>
+            <TodoList />
+        </SimplePageStyled>
     );
 };
