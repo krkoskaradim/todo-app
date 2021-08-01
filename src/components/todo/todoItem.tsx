@@ -12,6 +12,12 @@ export interface TodoItemProps {
     ellipsis?: EllipsisConfig
 }
 
+const CardStyled = styled(Card)`
+    .ant-card-body {
+      min-height: 10rem;
+    }
+`;
+
 const Wrapper = styled.div`
     text-align: center;
 `;
@@ -21,13 +27,13 @@ export const TodoItem = (props: TodoItemProps): JSX.Element => {
 
     return (
         <Wrapper>
-            <Card
+            <CardStyled
                 actions={
                     hideActions ? [] : [<TodoItemDetailAction id={todoData.id} />]
                 }
             >
                 <Paragraph ellipsis={ellipsis}>{todoData.title}</Paragraph>
-            </Card>
+            </CardStyled>
         </Wrapper>
     );
 };
