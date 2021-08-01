@@ -15,7 +15,7 @@ export const TodoList = (): JSX.Element => {
                             <TodoItem
                                 todoData={todoData}
                                 ellipsis={{
-                                    rows: 2,
+                                    rows: 4,
                                     expandable: false,
                                     symbol: '...',
                                 }}
