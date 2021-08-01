@@ -7,6 +7,7 @@ interface TodoDataContextState {
     data?: TodoData[];
     isLoading: boolean;
     error?: Error;
+    refetch: () => Promise<void>;
 }
 
 const Context = createContext<TodoDataContextState | null>(null);
@@ -26,15 +27,25 @@ interface TodoDataProviderProps {
 }
 
 export const TodoDataProvider = (props: TodoDataProviderProps): JSX.Element => {
-    const [state, setState] = useState<TodoDataContextState>({ isLoading: true });
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const refetch = async (): Promise<void> => {
+        setIsLoading(true);
+    };
+
+    const [state, setState] = useState<TodoDataContextState>({ isLoading, refetch });
     const { children } = props;
 
     useEffect(() => {
-        (async (): Promise<void> => {
-            const { data, error } = await getTodoData();
-            setState({ data, error, isLoading: false });
-        })();
-    }, []);
+        if (isLoading) {
+            (async (): Promise<void> => {
+                const { data, error } = await getTodoData();
+                setIsLoading(false);
+                setState({
+                    ...state, data, error, isLoading: false,
+                });
+            })();
+        }
+    }, [isLoading, state]);
 
     return (
         <Context.Provider value={state}>
