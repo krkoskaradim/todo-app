@@ -3,4 +3,7 @@ module.exports = {
         todoList: '/',
         todoDetail: '/detail/:id',
     },
+    api: {
+        baseUrl: 'data/',
+    },
 };
