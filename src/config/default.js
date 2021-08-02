@@ -5,5 +5,8 @@ module.exports = {
     },
     api: {
         baseUrl: 'data/',
+        todo: {
+            getTodoData: 'fakeTodoData.json',
+        },
     },
 };
