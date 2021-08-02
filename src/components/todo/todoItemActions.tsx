@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { EyeOutlined } from '@ant-design/icons';
 import * as config from '../../config/default';
+import { getUrlWithParams } from '../../utils/routeUtils';
 
 export interface TodoItemDetailActionProps {
     id: string
@@ -10,9 +11,8 @@ export interface TodoItemDetailActionProps {
 export const TodoItemDetailAction = (props: TodoItemDetailActionProps): JSX.Element => {
     const { id } = props;
 
-    // TODO create generic params assigner
     return (
-        <Link to={config.routes.todoDetail.replace(':id', id)}>
+        <Link to={getUrlWithParams(config.routes.todoDetail, [{ key: 'id', value: id.toString() }])}>
             <EyeOutlined />
         </Link>
     );
