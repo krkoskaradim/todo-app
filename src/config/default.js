@@ -1,6 +1,6 @@
 module.exports = {
     routes: {
         todoList: '/',
-        todoDetail: '/:id',
+        todoDetail: '/detail/:id',
     },
 };

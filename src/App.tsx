@@ -3,12 +3,12 @@ import {
     Route, BrowserRouter as Router, Switch,
 } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import { Result } from 'antd';
 import { TodoListPage } from './pages/todoListPage';
 import { TodoDetailPage } from './pages/todoDetailPage';
 import { TodoDataProvider } from './contexts/todoDataContext';
 import * as config from './config/default';
 import { TitleStyled } from './components/styled/typographyStyled';
+import { Page404 } from './pages/page404';
 
 const GlobalStyle = createGlobalStyle`
     body, html {
@@ -27,14 +27,11 @@ const App = (): JSX.Element => (
                     <>
                         <Route exact path={config.routes.todoList} component={TodoListPage} />
                         <Route exact path={config.routes.todoDetail} component={TodoDetailPage} />
+                        <Route exact path="*" component={Page404} />
                     </>
                 </TodoDataProvider>
             </Switch>
         </Router>
-        <Result
-            status="404"
-            title="Sorry, the page you visited does not exist"
-        />
     </>
 );
 
